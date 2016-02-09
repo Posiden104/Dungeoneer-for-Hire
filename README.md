@@ -30,7 +30,7 @@ TODO
 - [ ] Art
 
 
-####Merc Compounds
+#### Merc Compounds
 1. [ ] Spider Den
   * [ ] Different types of spiders
     * [ ] Normal
@@ -57,7 +57,6 @@ TODO
   * [ ] One time heroes
     * [ ] Dragon
     * [ ] Beholder
-8. [ ] 
 
 ####Quirks
 1. Positive
