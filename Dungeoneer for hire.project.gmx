@@ -13,6 +13,11 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_get_room_sprite.gml</script>
+    <scripts name="generation">
+      <script>scripts\scr_make_dungeon.gml</script>
+      <script>scripts\percent_chance.gml</script>
+      <script>scripts\change_dir.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_grid</object>
