@@ -31,7 +31,6 @@ height = 11;
 size = 128;
 global.Grid = ds_grid_create(width, height);
 ds_grid_clear(global.Grid, -1);
-
 </string>
           </argument>
         </arguments>
@@ -57,9 +56,8 @@ ds_grid_clear(global.Grid, -1);
             <string>/// Draw the grid
 for(i = 0; i &lt; width; i++) {
     for(j = 0; j &lt; height; j++) {
-        var sprite = scr_get_room_sprite(global.Grid [# width, height]);
-        show_debug_message(sprite);
-        draw_sprite(sprite, 0, width * size, height * size);
+        spr = scr_get_room_sprite(global.Grid [# i, j]);
+        draw_sprite(spr, 0, i * size, j * size);
     }
 }
 </string>

@@ -2,6 +2,8 @@
 num = argument0;
 
 switch(num) {
-case 0:
+case -1:
     return spr_grid_cell;
+case 0:
+    return spr_nothing;
 }
