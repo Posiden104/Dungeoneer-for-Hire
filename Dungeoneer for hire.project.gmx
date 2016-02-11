@@ -5,9 +5,20 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_grid_cell</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_get_room_sprite.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_grid</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_test_</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
