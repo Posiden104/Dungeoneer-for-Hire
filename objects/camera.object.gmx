@@ -25,21 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Init the grid
-width = 11;
-height = 11;
-size = 128;
-xoffset = 100;
-yoffset = 100;
-global.Grid = ds_grid_create(width, height);
-ds_grid_clear(global.Grid, 0);
-create_dungeon_1();
+            <string>/// init camera
+spd = 10;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,12 +49,26 @@ create_dungeon_1();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw the grid
-for(i = 0; i &lt; width; i++) {
-    for(j = 0; j &lt; height; j++) {
-        spr = scr_get_room_sprite(global.Grid [# i, j]);
-        draw_sprite(spr, 0, (i * size)+xoffset, (j * size)+yoffset);
-    }
+            <string>/// Move camera
+
+xdir = keyboard_check(vk_right) - keyboard_check(vk_left);
+ydir = keyboard_check(vk_down) - keyboard_check(vk_up);
+
+x += xdir * spd;
+y += ydir * spd;
+
+//Keeps the camera object always snapped to the view
+while(x + (view_wview[0] / 2) &gt;= room_width){
+    x--;
+}
+while(y + (view_hview[0] / 2) &gt;= room_height){
+    y--;
+}  
+while(x - (view_wview[0] / 2) &lt; 0){
+    x++;
+}
+while(y - (view_hview[0] / 2) &lt; 0){
+    y++;
 }
 </string>
           </argument>

@@ -7,20 +7,33 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_grid_cell</sprite>
+    <sprite>sprites\spr_selected</sprite>
     <sprite>sprites\spr_nothing</sprite>
+    <sprite>sprites\spr_floor_1</sprite>
+    <sprite>sprites\spr_floor_2</sprite>
+    <sprite>sprites\spr_floor_3</sprite>
+    <sprite>sprites\spr_floor_4</sprite>
+    <sprite>sprites\spr_floor_5</sprite>
+    <sprite>sprites\spr_floor_6</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_get_room_sprite.gml</script>
     <scripts name="generation">
-      <script>scripts\scr_make_dungeon.gml</script>
+      <script>scripts\make_dungeon.gml</script>
+      <script>scripts\branch.gml</script>
       <script>scripts\percent_chance.gml</script>
       <script>scripts\change_dir.gml</script>
+      <script>scripts\new_dir.gml</script>
+    </scripts>
+    <scripts name="Prefab Dungeons">
+      <script>scripts\create_dungeon_1.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_grid</object>
+    <object>objects\grid</object>
+    <object>objects\camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

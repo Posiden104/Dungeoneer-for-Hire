@@ -34,6 +34,33 @@ yoffset = 100;
 global.Grid = ds_grid_create(width, height);
 ds_grid_clear(global.Grid, 0);
 create_dungeon_1();
+sx = -1;
+sy = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// move selected box to right place
+sx = (mouse_x - xoffset) div size;
+sy = (mouse_y - yoffset) div size;
 </string>
           </argument>
         </arguments>
@@ -59,8 +86,14 @@ create_dungeon_1();
             <string>/// Draw the grid
 for(i = 0; i &lt; width; i++) {
     for(j = 0; j &lt; height; j++) {
-        spr = scr_get_room_sprite(global.Grid [# i, j]);
-        draw_sprite(spr, 0, (i * size)+xoffset, (j * size)+yoffset);
+        spr = scr_get_room_sprite(i, j);
+        draw_sprite(spr, 0, (i * size) + xoffset, (j * size) + yoffset);
+    }
+}
+
+if(sx != -1 &amp;&amp; sy != -1) {
+    if(global.Grid[# sx, sy] != BLANK &amp;&amp; global.Grid[# sx, sy] != 0) {
+        draw_sprite(spr_selected, 0, (sx * size) + xoffset, (sy * size) + yoffset);
     }
 }
 </string>
